@@ -138,7 +138,7 @@ vk_session = vk_api.VkApi(
     app_id=2685278
 )
 try:
-    vk_session.auth()
+    vk_session.auth(token_only=True)
 except vk_api.exceptions.Captcha as captcha:
     captcha.sid
     captcha.get_url()

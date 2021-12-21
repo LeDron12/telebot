@@ -268,6 +268,14 @@
       }
     ],
     "token": {
+      "app2685278": {
+        "scope_140492255": {
+          "access_token": "c74c5e39a58d1939b507a756d96bc63f5fa71830a650ed1b831c9f5c58ce01cbff4e330dcc9f042ea7d0e",
+          "email": "semakov_2002@mail.ru",
+          "expires_in": "0",
+          "user_id": "357975808"
+        }
+      },
       "app6222115": {
         "scope_140492255": {
           "access_token": "db266f8e9d5184cdedeaf7d251555ab20499b23229b32f41eb9aace67bd1d5d40255f8026c8554625919b",
