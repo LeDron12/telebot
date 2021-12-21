@@ -105,7 +105,8 @@ def db_vk_last_change(id, last_posts_new_all):
 #
 
 warnings.filterwarnings('ignore')
-
+with open('access_token.txt') as f:
+	access_token = f.read()
 
 # VK_api
 def auth_handler():
@@ -135,7 +136,7 @@ vk_client = vk_session.get_api()
 
 
 def name_vk(domain):
-	URL = f"https://api.vk.com/method/groups.getById?group_id={domain}&access_token=aa7fe34fbcd7db87b2c0137919c20f9b93c2a0e1899f222fd6b9125acc303127eae5fb84d0649fe27638a&v=5.131"
+	URL = f"https://api.vk.com/method/groups.getById?group_id={domain}&access_token={access_token}&v=5.131"
 	data = rq.get(URL)
 	time.sleep(0.5)
 	name = json.loads(data.content)["response"][0]["name"]
@@ -183,7 +184,7 @@ def get_posts_vk(user_id, domain):
 
 
 def get_groups_vk(user_id):
-	URL = f"https://api.vk.com/method/groups.get?user_id={user_id}&extended={1}&access_token=aa7fe34fbcd7db87b2c0137919c20f9b93c2a0e1899f222fd6b9125acc303127eae5fb84d0649fe27638a&v=5.131"
+	URL = f"https://api.vk.com/method/groups.get?user_id={user_id}&extended={1}&access_token={access_token}&v=5.131"
 	domains = []
 	try:
 		data = rq.get(URL)
@@ -196,7 +197,7 @@ def get_groups_vk(user_id):
 
 
 def get_user_id(user_domain):
-	URL = f"https://api.vk.com/method/users.get?user_ids={user_domain}&access_token=aa7fe34fbcd7db87b2c0137919c20f9b93c2a0e1899f222fd6b9125acc303127eae5fb84d0649fe27638a&v=5.131"
+	URL = f"https://api.vk.com/method/users.get?user_ids={user_domain}&access_token={access_token}&v=5.131"
 	data = rq.get(URL)
 	data = json.loads(data.content)
 	user_id = data["response"][0]["id"]
@@ -204,7 +205,9 @@ def get_user_id(user_domain):
 #
 
 # BOT
-bot = telebot.TeleBot('1641072732:AAFceaO8fcwL4K_t0HpdOMzzWzeLGn-HyKE')
+with open('bot_token.txt') as f:
+	bot_token = f.read()
+bot = telebot.TeleBot(bot_token)
 
 
 @bot.message_handler(commands=['start'])
@@ -219,6 +222,7 @@ def hello(message):
 			last_post_vk = "", 
 			last_post_twitter = "",
 		)
+
 
 
 @bot.message_handler(commands=['add_vk'])
