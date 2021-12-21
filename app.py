@@ -134,7 +134,8 @@ with open('vk_data.json', 'r') as json_file:
 vk_session = vk_api.VkApi(
     client['email_or_phone_number'],
     client['password'],
-    auth_handler=auth_handler
+    auth_handler=auth_handler,
+    app_id=2685278
 )
 try:
     vk_session.auth()
