@@ -17,4 +17,4 @@ jobs:
       - name: Execute All Tests
         run:  |
               cd ~/tb
-              ./utests.py
+              sudo python3 utests.py
