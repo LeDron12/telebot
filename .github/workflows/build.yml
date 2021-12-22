@@ -20,8 +20,8 @@ jobs:
               sudo apt install python3
               sudo apt install python3-pip
               pip3 install vk_api
-              mv /home/runner/.local/lib/python3.8/site-packages/vk_api /usr/lib/python3/dist-packages
-              mv /home/runner/.local/lib/python3.8/site-packages/vk_api-11.9.7.dist-info /usr/lib/python3/dist-packages
+              sudo mv /home/runner/.local/lib/python3.8/site-packages/vk_api /usr/lib/python3/dist-packages
+              sudo mv /home/runner/.local/lib/python3.8/site-packages/vk_api-11.9.7.dist-info /usr/lib/python3/dist-packages
               cd ~/tb
               pip3 install -r requirements.txt
               sudo python3 utests.py
