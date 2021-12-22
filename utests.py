@@ -1,5 +1,5 @@
 import unittest
-import app
+import methods
 import telebot
 import vk_api
 import json
@@ -9,8 +9,10 @@ import urllib
 import requests as rq
 import time
 
-class AllTests(unittest.TestCase):
-    def auth(self):
+class TestAllTests(unittest.TestCase):
+    def test_name_domain(self):
+        with open('access_token.txt') as f:
+            access_token = f.read()
         with open('api_key.txt') as f:
             google_token = f.read()
         with open('vk_data.json', 'r') as json_file:
@@ -19,7 +21,7 @@ class AllTests(unittest.TestCase):
         vk_session = vk_api.VkApi(
             client['email_or_phone_number'],
             client['password'],
-            auth_handler=app.auth_handler,
+            auth_handler=methods.auth_handler,
             app_id=2685278
         )
         try:
@@ -29,12 +31,8 @@ class AllTests(unittest.TestCase):
             captcha.get_url()
             captcha.get_image()
         vk_client = vk_session.get_api()
-
-
-    def test_name_domain(self):
-        self.auth()
         domain = "sasambainc"
-        self.assertEqual(app.name_vk(domain), "Сасамба", 'Хуйня')
+        self.assertEqual(methods.name_vk(domain, access_token), "Сасамба", 'Хуйня')
         return True
 
 
