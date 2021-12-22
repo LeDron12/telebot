@@ -16,10 +16,10 @@ jobs:
         
       - name: Execute All Tests
         run:  |
+              cd ~/tb
               sudo apt-get update
               sudo apt install python3
               sudo apt install python3-pip
-              cd ~/tb
               pip3 install vk_api
               pip3 install -r requirements.txt
               sudo python3 utests.py
