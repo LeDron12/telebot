@@ -7,6 +7,4 @@ jobs:
     runs-on:  ubuntu-latest
     steps:
       - name: Execute All Tests
-        run:  cd ~
-              python3 utests.py
-        
+        run:  python3 utests.py
