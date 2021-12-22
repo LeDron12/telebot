@@ -16,6 +16,9 @@ jobs:
         
       - name: Execute All Tests
         run:  |
-              sudo apt-get install pyTelegramBotAPI
+              sudo ap-get update
+              sudo apt install python
+              sudo apt install python3-pip
               cd ~/tb
+              pip3 install -r requirements.txt
               sudo python3 utests.py
