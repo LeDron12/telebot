@@ -8,5 +8,9 @@ jobs:
     steps:
       - name: Execute All Tests
         run:  |
-              cd ../../
-              python3 utests.py
+              ls
+              cd ../
+              ls
+              cd ../
+              ls
+          
