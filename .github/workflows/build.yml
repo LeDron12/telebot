@@ -1,0 +1,11 @@
+name: Run tests
+
+on:   [push]
+
+jobs: 
+  MyTests:
+    runs-on:  ubuntu-latest
+    steps:
+      - name: Execute All Tests
+        run:  python3 utests.py
+        
