@@ -2,11 +2,7 @@ import unittest
 import methods
 import vk_api
 import json
-import warnings
 import sqlite3
-import urllib
-import requests as rq
-import time
 
 class TestAllTests(unittest.TestCase):
     def test_name_domain(self):

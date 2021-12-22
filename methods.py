@@ -1,9 +1,5 @@
-import telebot
-import vk_api
 import json
-import warnings
 import sqlite3
-import urllib
 import requests as rq
 import time
 
