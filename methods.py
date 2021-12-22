@@ -15,6 +15,7 @@ def db_table_val(user_id: int, vk_public: str, twitter_public: str,
         'INSERT INTO all_users (user_id, vk_public, twitter_public, last_post_vk, last_post_twitter) VALUES (?, ?, ?, ?, ?)',
         (user_id, vk_public, twitter_public, last_post_vk, last_post_twitter))
     conn.commit()
+    return True
 
 def db_check(id):
     conn = sqlite3.connect('telebot.db')

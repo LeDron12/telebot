@@ -32,8 +32,16 @@ class TestAllTests(unittest.TestCase):
             captcha.get_image()
         vk_client = vk_session.get_api()
         domain = "sasambainc"
-        self.assertEqual(methods.name_vk(domain, access_token), "Сасамба", 'Хуйня')
-        return True
+        self.assertEqual(methods.name_vk(domain, access_token), "Сасамба", 'False')
+
+    def test_insert_delete_db(self):
+        self.assertEqual(methods.db_table_val(1, '1', '1', '1', '1'), True, 'False')
+        conn = sqlite3.connect('telebot.db')
+        cursor = conn.cursor()
+        cursor.execute(
+            'DELETE FROM table1 WHERE user_id = ?',
+            (1, ))
+        conn.commit()
 
 
 if __name__ == '__main__':
