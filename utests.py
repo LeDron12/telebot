@@ -39,7 +39,7 @@ class TestAllTests(unittest.TestCase):
         conn = sqlite3.connect('telebot.db')
         cursor = conn.cursor()
         cursor.execute(
-            'DELETE FROM table1 WHERE user_id = ?',
+            'DELETE FROM all_users WHERE user_id = ?',
             (1, ))
         conn.commit()
 
