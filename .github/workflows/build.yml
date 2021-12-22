@@ -16,5 +16,6 @@ jobs:
         
       - name: Execute All Tests
         run:  |
+              sudo apt-get install pyTelegramBotAPI
               cd ~/tb
               sudo python3 utests.py
