@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Execute All Tests
         run:  |
-              ls
+              pwd
               cd ../
-              ls
+              pwd
               cd ../
-              ls
+              pwd
           
