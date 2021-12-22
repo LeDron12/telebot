@@ -1,6 +1,5 @@
 import unittest
 import methods
-import telebot
 import vk_api
 import json
 import warnings
@@ -35,12 +34,12 @@ class TestAllTests(unittest.TestCase):
         self.assertEqual(methods.name_vk(domain, access_token), "Сасамба", 'False')
 
     def test_insert_delete_db(self):
-        self.assertEqual(methods.db_table_val(1, '1', '1', '1', '1'), True, 'False')
+        self.assertEqual(methods.db_table_val(1488, '1', '1', '1', '1'), True, 'False')
         conn = sqlite3.connect('telebot.db')
         cursor = conn.cursor()
         cursor.execute(
             'DELETE FROM all_users WHERE user_id = ?',
-            (1, ))
+            (1488, ))
         conn.commit()
 
 
