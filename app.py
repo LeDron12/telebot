@@ -336,6 +336,9 @@ def help(message):
                      "Удалить паблик VK: /delete_vk 'ссылка на паблик'" + '\n' +
                      "Обновить ленту: /refresh" + '\n' +
                      "Узнать список своих пабликов VK: /my_vk" + '\n')
+    print(message)
+
+
 
 
 """@bot.message_handler(commands=['import'])
