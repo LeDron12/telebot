@@ -16,7 +16,7 @@ jobs:
         
       - name: Execute All Tests
         run:  |
-              sudo ap-get update
+              sudo apt-get update
               sudo apt install python
               sudo apt install python3-pip
               cd ~/tb
