@@ -11,13 +11,13 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for tests to succeed
-        uses: lewagon/wait-on-check-action@v1.1.1
+      - name: Wait for build to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build
         with:
-          ref: ${{ github.ref }}
-          check-name: 'Run tests'
-          repo-token: ${{ secrets.MY_TOKEN }}
-          wait-interval: 10
+          token: ${{ secrets.MY_TOKEN }}
+          checkName: Run tests
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           
       - name: Check out the repo
         uses: actions/checkout@v2
