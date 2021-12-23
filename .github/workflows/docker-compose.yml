@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  bolaboba:
-    image: lodthe/ec2-balaboba
+  telebot:
+    image: justnejust/telebot
     labels:
       - "com.centurylinklabs.watchtower.scope=myscope"
     environment:
-      TELEGRAM_BOT_TOKEN: "123123123:FFFFFFFFFFFFFFFFFF"
+      TELEGRAM_BOT_TOKEN: "1641072732:AAFceaO8fcwL4K_t0HpdOMzzWzeLGn-HyKE"
 
   watchtower:
     image: containrrr/watchtower
