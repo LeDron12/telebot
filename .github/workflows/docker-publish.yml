@@ -11,6 +11,14 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for build to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build
+        with:
+          token: ${{ secrets.MY_TOKEN }}
+          checkName: MyTests
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          
       - name: Check out the repo
         uses: actions/checkout@v2
       
