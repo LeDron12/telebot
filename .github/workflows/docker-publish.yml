@@ -16,7 +16,7 @@ jobs:
         id: wait-for-build
         with:
           token: ${{ secrets.MY_TOKEN }}
-          checkName: Run tests
+          checkName: MyTests
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           
       - name: Check out the repo
